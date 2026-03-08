@@ -62,9 +62,27 @@
   "species": [
     {
       "name": {
+        "value": "Maize",
+        "confidence": 1.0,
+        "source_text": "Effects of Nitrogen Fertilization on Maize Yield and Leaf Nitrogen in Iowa",
+        "page_number": 1,
+        "status": "extracted"
+      }
+    },
+    {
+      "name": {
         "value": "Zea mays",
         "confidence": 1.0,
-        "source_text": "Maize Zea mays L.",
+        "source_text": "Maize Zea mays L. hybrid DKC52-61 planted at 79000 seeds ha-1 on May 4 2021.",
+        "page_number": 1,
+        "status": "extracted"
+      }
+    },
+    {
+      "name": {
+        "value": "Soybean",
+        "confidence": 1.0,
+        "source_text": "Soybean Glycine max variety P22T61R grown in adjacent plots.",
         "page_number": 1,
         "status": "extracted"
       }
@@ -73,7 +91,7 @@
       "name": {
         "value": "Glycine max",
         "confidence": 1.0,
-        "source_text": "Soybean Glycine max",
+        "source_text": "Soybean Glycine max variety P22T61R grown in adjacent plots.",
         "page_number": 1,
         "status": "extracted"
       }
@@ -84,32 +102,32 @@
       "name": {
         "value": "DKC52-61",
         "confidence": 1.0,
-        "source_text": "Maize Zea mays L. hybrid DKC52-61",
+        "source_text": "Maize Zea mays L. hybrid DKC52-61 planted at 79000 seeds ha-1 on May 4 2021.",
         "page_number": 1,
         "status": "extracted"
       },
       "notes": {
-        "value": "",
-        "confidence": 0.0,
-        "source_text": "",
-        "page_number": null,
-        "status": "unresolved"
+        "value": "hybrid, Maize Zea mays L.",
+        "confidence": 1.0,
+        "source_text": "Maize Zea mays L. hybrid DKC52-61 planted at 79000 seeds ha-1 on May 4 2021.",
+        "page_number": 1,
+        "status": "extracted"
       }
     },
     {
       "name": {
         "value": "P22T61R",
         "confidence": 1.0,
-        "source_text": "Soybean Glycine max variety P22T61R",
+        "source_text": "Soybean Glycine max variety P22T61R grown in adjacent plots.",
         "page_number": 1,
         "status": "extracted"
       },
       "notes": {
-        "value": "",
-        "confidence": 0.0,
-        "source_text": "",
-        "page_number": null,
-        "status": "unresolved"
+        "value": "variety, Soybean Glycine max",
+        "confidence": 1.0,
+        "source_text": "Soybean Glycine max variety P22T61R grown in adjacent plots.",
+        "page_number": 1,
+        "status": "extracted"
       }
     }
   ],
@@ -124,22 +142,22 @@
       },
       "crop": {
         "value": "Maize",
-        "confidence": 0.9,
-        "source_text": "Maize Zea mays L. hybrid DKC52-61 planted at 79000 seeds ha-1 on May 4 2021. Canopy height August 15 2021: mean 2.85 m, SE 0.07, n=12.",
+        "confidence": 1.0,
+        "source_text": "Maize Zea mays L. hybrid DKC52-61",
         "page_number": 1,
         "status": "inferred"
       },
       "cultivar": {
         "value": "DKC52-61",
-        "confidence": 0.9,
-        "source_text": "Maize Zea mays L. hybrid DKC52-61 planted at 79000 seeds ha-1 on May 4 2021. Canopy height August 15 2021: mean 2.85 m, SE 0.07, n=12.",
+        "confidence": 1.0,
+        "source_text": "Maize Zea mays L. hybrid DKC52-61",
         "page_number": 1,
         "status": "inferred"
       },
       "sitename": {
         "value": "Ames Research Farm, Iowa State University",
         "confidence": 1.0,
-        "source_text": "Field trials were conducted at the Ames Research Farm, Iowa State University. Canopy height August 15 2021: mean 2.85 m, SE 0.07, n=12.",
+        "source_text": "Field trials were conducted at the Ames Research Farm, Iowa State University.",
         "page_number": 1,
         "status": "inferred"
       },
@@ -160,35 +178,35 @@
       "mean": {
         "value": 2.85,
         "confidence": 1.0,
-        "source_text": "Canopy height August 15 2021: mean 2.85 m, SE 0.07, n=12.",
+        "source_text": "mean 2.85 m",
         "page_number": 1,
         "status": "extracted"
       },
       "units": {
         "value": "m",
         "confidence": 1.0,
-        "source_text": "Canopy height August 15 2021: mean 2.85 m, SE 0.07, n=12.",
+        "source_text": "2.85 m",
         "page_number": 1,
         "status": "extracted"
       },
       "n": {
         "value": 12,
         "confidence": 1.0,
-        "source_text": "Canopy height August 15 2021: mean 2.85 m, SE 0.07, n=12.",
+        "source_text": "n=12",
         "page_number": 1,
         "status": "extracted"
       },
       "statname": {
         "value": "SE",
         "confidence": 1.0,
-        "source_text": "Canopy height August 15 2021: mean 2.85 m, SE 0.07, n=12.",
+        "source_text": "SE 0.07",
         "page_number": 1,
         "status": "extracted"
       },
       "stat": {
         "value": 0.07,
         "confidence": 1.0,
-        "source_text": "Canopy height August 15 2021: mean 2.85 m, SE 0.07, n=12.",
+        "source_text": "SE 0.07",
         "page_number": 1,
         "status": "extracted"
       }
@@ -203,22 +221,22 @@
       },
       "crop": {
         "value": "Maize",
-        "confidence": 0.9,
-        "source_text": "Maize Zea mays L. hybrid DKC52-61 planted at 79000 seeds ha-1 on May 4 2021. Leaf N August 20 2021: mean 3.12%, SD 0.18, n=8, high-N treatment.",
+        "confidence": 1.0,
+        "source_text": "Maize Zea mays L. hybrid DKC52-61",
         "page_number": 1,
         "status": "inferred"
       },
       "cultivar": {
         "value": "DKC52-61",
-        "confidence": 0.9,
-        "source_text": "Maize Zea mays L. hybrid DKC52-61 planted at 79000 seeds ha-1 on May 4 2021. Leaf N August 20 2021: mean 3.12%, SD 0.18, n=8, high-N treatment.",
+        "confidence": 1.0,
+        "source_text": "Maize Zea mays L. hybrid DKC52-61",
         "page_number": 1,
         "status": "inferred"
       },
       "sitename": {
         "value": "Ames Research Farm, Iowa State University",
         "confidence": 1.0,
-        "source_text": "Field trials were conducted at the Ames Research Farm, Iowa State University. Leaf N August 20 2021: mean 3.12%, SD 0.18, n=8, high-N treatment.",
+        "source_text": "Field trials were conducted at the Ames Research Farm, Iowa State University.",
         "page_number": 1,
         "status": "inferred"
       },
@@ -230,7 +248,7 @@
         "status": "extracted"
       },
       "method": {
-        "value": "Dumas combustion",
+        "value": "Dumas combustion, LECO CN628",
         "confidence": 1.0,
         "source_text": "Leaf N: Dumas combustion, LECO CN628.",
         "page_number": 1,
@@ -239,35 +257,35 @@
       "mean": {
         "value": 3.12,
         "confidence": 1.0,
-        "source_text": "Leaf N August 20 2021: mean 3.12%, SD 0.18, n=8, high-N treatment.",
+        "source_text": "mean 3.12%",
         "page_number": 1,
         "status": "extracted"
       },
       "units": {
         "value": "%",
         "confidence": 1.0,
-        "source_text": "Leaf N August 20 2021: mean 3.12%, SD 0.18, n=8, high-N treatment.",
+        "source_text": "3.12%",
         "page_number": 1,
         "status": "extracted"
       },
       "n": {
         "value": 8,
         "confidence": 1.0,
-        "source_text": "Leaf N August 20 2021: mean 3.12%, SD 0.18, n=8, high-N treatment.",
+        "source_text": "n=8",
         "page_number": 1,
         "status": "extracted"
       },
       "statname": {
         "value": "SD",
         "confidence": 1.0,
-        "source_text": "Leaf N August 20 2021: mean 3.12%, SD 0.18, n=8, high-N treatment.",
+        "source_text": "SD 0.18",
         "page_number": 1,
         "status": "extracted"
       },
       "stat": {
         "value": 0.18,
         "confidence": 1.0,
-        "source_text": "Leaf N August 20 2021: mean 3.12%, SD 0.18, n=8, high-N treatment.",
+        "source_text": "SD 0.18",
         "page_number": 1,
         "status": "extracted"
       }
@@ -282,22 +300,22 @@
       },
       "crop": {
         "value": "Maize",
-        "confidence": 0.9,
-        "source_text": "Maize Zea mays L. hybrid DKC52-61 planted at 79000 seeds ha-1 on May 4 2021. Grain yield September 28 2021: mean 11.4 Mg ha-1, SE 0.23, n=4.",
+        "confidence": 1.0,
+        "source_text": "Maize Zea mays L. hybrid DKC52-61",
         "page_number": 1,
         "status": "inferred"
       },
       "cultivar": {
         "value": "DKC52-61",
-        "confidence": 0.9,
-        "source_text": "Maize Zea mays L. hybrid DKC52-61 planted at 79000 seeds ha-1 on May 4 2021. Grain yield September 28 2021: mean 11.4 Mg ha-1, SE 0.23, n=4.",
+        "confidence": 1.0,
+        "source_text": "Maize Zea mays L. hybrid DKC52-61",
         "page_number": 1,
         "status": "inferred"
       },
       "sitename": {
         "value": "Ames Research Farm, Iowa State University",
         "confidence": 1.0,
-        "source_text": "Field trials were conducted at the Ames Research Farm, Iowa State University. Grain yield September 28 2021: mean 11.4 Mg ha-1, SE 0.23, n=4.",
+        "source_text": "Field trials were conducted at the Ames Research Farm, Iowa State University.",
         "page_number": 1,
         "status": "inferred"
       },
@@ -318,35 +336,35 @@
       "mean": {
         "value": 11.4,
         "confidence": 1.0,
-        "source_text": "Grain yield September 28 2021: mean 11.4 Mg ha-1, SE 0.23, n=4.",
+        "source_text": "mean 11.4 Mg ha-1",
         "page_number": 1,
         "status": "extracted"
       },
       "units": {
         "value": "Mg ha-1",
         "confidence": 1.0,
-        "source_text": "Grain yield September 28 2021: mean 11.4 Mg ha-1, SE 0.23, n=4.",
+        "source_text": "11.4 Mg ha-1",
         "page_number": 1,
         "status": "extracted"
       },
       "n": {
         "value": 4,
         "confidence": 1.0,
-        "source_text": "Grain yield September 28 2021: mean 11.4 Mg ha-1, SE 0.23, n=4.",
+        "source_text": "n=4",
         "page_number": 1,
         "status": "extracted"
       },
       "statname": {
         "value": "SE",
         "confidence": 1.0,
-        "source_text": "Grain yield September 28 2021: mean 11.4 Mg ha-1, SE 0.23, n=4.",
+        "source_text": "SE 0.23",
         "page_number": 1,
         "status": "extracted"
       },
       "stat": {
         "value": 0.23,
         "confidence": 1.0,
-        "source_text": "Grain yield September 28 2021: mean 11.4 Mg ha-1, SE 0.23, n=4.",
+        "source_text": "SE 0.23",
         "page_number": 1,
         "status": "extracted"
       }
@@ -357,46 +375,46 @@
       "name": {
         "value": "Canopy height",
         "confidence": 1.0,
-        "source_text": "Canopy height: tape measure, soil surface to leaf tip.",
+        "source_text": "Canopy height: tape measure, soil surface to leaf tip. Canopy height August 15 2021: mean 2.85 m, SE 0.07, n=12.",
         "page_number": 1,
         "status": "extracted"
       },
       "units": {
         "value": "m",
         "confidence": 1.0,
-        "source_text": "Canopy height August 15 2021: mean 2.85 m, SE 0.07, n=12.",
+        "source_text": "mean 2.85 m",
         "page_number": 1,
         "status": "extracted"
       },
       "description": {
-        "value": "",
-        "confidence": 0.0,
-        "source_text": "",
-        "page_number": null,
-        "status": "unresolved"
+        "value": "Distance from the soil surface to the leaf tip.",
+        "confidence": 1.0,
+        "source_text": "Canopy height: tape measure, soil surface to leaf tip.",
+        "page_number": 1,
+        "status": "extracted"
       }
     },
     {
       "name": {
         "value": "Leaf N",
         "confidence": 1.0,
-        "source_text": "Leaf N: Dumas combustion, LECO CN628.",
+        "source_text": "Leaf N: Dumas combustion, LECO CN628. Leaf N August 20 2021: mean 3.12%, SD 0.18, n=8, high-N treatment.",
         "page_number": 1,
         "status": "extracted"
       },
       "units": {
         "value": "%",
         "confidence": 1.0,
-        "source_text": "Leaf N August 20 2021: mean 3.12%, SD 0.18, n=8, high-N treatment.",
+        "source_text": "mean 3.12%",
         "page_number": 1,
         "status": "extracted"
       },
       "description": {
-        "value": "",
-        "confidence": 0.0,
-        "source_text": "",
-        "page_number": null,
-        "status": "unresolved"
+        "value": "Nitrogen content in leaves.",
+        "confidence": 0.9,
+        "source_text": "Leaf N: Dumas combustion, LECO CN628.",
+        "page_number": 1,
+        "status": "inferred"
       }
     },
     {
@@ -410,30 +428,30 @@
       "units": {
         "value": "Mg ha-1",
         "confidence": 1.0,
-        "source_text": "Grain yield September 28 2021: mean 11.4 Mg ha-1, SE 0.23, n=4.",
+        "source_text": "mean 11.4 Mg ha-1",
         "page_number": 1,
         "status": "extracted"
       },
       "description": {
-        "value": "",
-        "confidence": 0.0,
-        "source_text": "",
-        "page_number": null,
-        "status": "unresolved"
+        "value": "Amount of grain produced per unit area.",
+        "confidence": 0.9,
+        "source_text": "Grain yield September 28 2021: mean 11.4 Mg ha-1, SE 0.23, n=4.",
+        "page_number": 1,
+        "status": "inferred"
       }
     }
   ],
   "methods": [
     {
       "name": {
-        "value": "tape measure",
+        "value": "Canopy height measurement",
         "confidence": 1.0,
         "source_text": "Canopy height: tape measure, soil surface to leaf tip.",
         "page_number": 1,
         "status": "extracted"
       },
       "description": {
-        "value": "soil surface to leaf tip",
+        "value": "Canopy height was measured using a tape measure, from the soil surface to the leaf tip.",
         "confidence": 1.0,
         "source_text": "Canopy height: tape measure, soil surface to leaf tip.",
         "page_number": 1,
@@ -442,14 +460,14 @@
     },
     {
       "name": {
-        "value": "Dumas combustion",
+        "value": "Leaf Nitrogen (Leaf N) measurement",
         "confidence": 1.0,
         "source_text": "Leaf N: Dumas combustion, LECO CN628.",
         "page_number": 1,
         "status": "extracted"
       },
       "description": {
-        "value": "LECO CN628",
+        "value": "Leaf N was measured using the Dumas combustion method with a LECO CN628 instrument.",
         "confidence": 1.0,
         "source_text": "Leaf N: Dumas combustion, LECO CN628.",
         "page_number": 1,
@@ -458,18 +476,18 @@
     },
     {
       "name": {
-        "value": "Massey Ferguson 8XP combine",
+        "value": "Grain harvest for yield measurement",
         "confidence": 1.0,
         "source_text": "Grain: Massey Ferguson 8XP combine.",
         "page_number": 1,
         "status": "extracted"
       },
       "description": {
-        "value": "",
-        "confidence": 0.0,
-        "source_text": "",
-        "page_number": null,
-        "status": "unresolved"
+        "value": "Grain was harvested using a Massey Ferguson 8XP combine, which is the instrument used in the process of obtaining grain for yield measurement.",
+        "confidence": 1.0,
+        "source_text": "Grain: Massey Ferguson 8XP combine.",
+        "page_number": 1,
+        "status": "extracted"
       }
     }
   ],
@@ -483,9 +501,9 @@
         "status": "extracted"
       },
       "description": {
-        "value": "202 kg N ha-1 urea",
+        "value": "202 kg N ha-1 urea, applied April 30 2021",
         "confidence": 1.0,
-        "source_text": "High-N: 202 kg N ha-1 urea.",
+        "source_text": "High-N: 202 kg N ha-1 urea. N fertilizer applied April 30 2021.",
         "page_number": 1,
         "status": "extracted"
       }
@@ -499,9 +517,9 @@
         "status": "extracted"
       },
       "description": {
-        "value": "67 kg N ha-1",
+        "value": "67 kg N ha-1, applied April 30 2021",
         "confidence": 1.0,
-        "source_text": "Low-N: 67 kg N ha-1.",
+        "source_text": "Low-N: 67 kg N ha-1. N fertilizer applied April 30 2021.",
         "page_number": 1,
         "status": "extracted"
       }
@@ -540,7 +558,7 @@
         "status": "extracted"
       },
       "description": {
-        "value": "Maize Zea mays L. hybrid DKC52-61 planted at 79000 seeds ha-1",
+        "value": "Maize Zea mays L. hybrid DKC52-61 planted at 79000 seeds ha-1.",
         "confidence": 1.0,
         "source_text": "Maize Zea mays L. hybrid DKC52-61 planted at 79000 seeds ha-1 on May 4 2021.",
         "page_number": 1,
@@ -549,9 +567,9 @@
     },
     {
       "event": {
-        "value": "N fertilizer application",
+        "value": "fertilization",
         "confidence": 1.0,
-        "source_text": "N fertilizer applied April 30 2021.",
+        "source_text": "High-N: 202 kg N ha-1 urea. Low-N: 67 kg N ha-1. Control: 0 N. N fertilizer applied April 30 2021.",
         "page_number": 1,
         "status": "extracted"
       },
@@ -563,9 +581,9 @@
         "status": "extracted"
       },
       "description": {
-        "value": "N fertilizer applied",
+        "value": "N fertilizer applied. Treatments included High-N: 202 kg N ha-1 urea, Low-N: 67 kg N ha-1, and Control: 0 N.",
         "confidence": 1.0,
-        "source_text": "N fertilizer applied April 30 2021.",
+        "source_text": "High-N: 202 kg N ha-1 urea. Low-N: 67 kg N ha-1. Control: 0 N. N fertilizer applied April 30 2021.",
         "page_number": 1,
         "status": "extracted"
       }
@@ -586,11 +604,11 @@
         "status": "extracted"
       },
       "description": {
-        "value": "",
-        "confidence": 0.0,
-        "source_text": "",
-        "page_number": null,
-        "status": "unresolved"
+        "value": "Harvest of maize.",
+        "confidence": 1.0,
+        "source_text": "Harvest September 28 2021.",
+        "page_number": 1,
+        "status": "extracted"
       }
     }
   ]

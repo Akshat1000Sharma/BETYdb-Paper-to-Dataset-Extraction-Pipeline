@@ -1,4 +1,4 @@
 name,units,description
-Canopy height,m,
-Leaf N,%,
-Grain yield,Mg ha-1,
+Canopy height,m,Distance from the soil surface to the leaf tip.
+Leaf N,%,Nitrogen content in leaves.
+Grain yield,Mg ha-1,Amount of grain produced per unit area.

@@ -1,6 +1,6 @@
 # BETYdb Paper-to-Dataset Extraction Pipeline
 
-An AI-powered command-line pipeline that reads a scientific agronomic or ecological research paper (PDF), extracts all experimental data using a large language model, and exports structured CSV tables ready to upload into [BETYdb](https://www.betydb.org/) — the Biofuel Ecophysiological Traits and Yields database.
+A command-line pipeline that reads a scientific agronomic or ecological research paper (PDF), extracts all experimental data using a structured extraction model, and exports CSV tables ready to upload into [BETYdb](https://www.betydb.org/) — the Biofuel Ecophysiological Traits and Yields database.
 
 ---
 
@@ -39,7 +39,7 @@ Every extracted value retains its source sentence, page number, and a confidence
 │                                                          │ Module 5  │  │
 │                                                          └─────┬─────┘  │
 │                                                                │        │
-│  ┌──────────────────────────────────────────────────────┐     │        │
+│  ┌──────────────────────────────────────────────────────┐       │        │
 │  │                   BETYdb Exporter  (Module 6)        │<────┘        │
 │  │                                                      │              │
 │  │  traits_long.csv   traits_wide.csv   sites.csv       │              │
@@ -50,75 +50,72 @@ Every extracted value retains its source sentence, page number, and a confidence
 └─────────────────────────────────────────────────────────────────────────┘
 
 Data flow with provenance:
-  Each extracted field carries:  value | confidence | source_text | page_number | status
+  Each extracted field carries: value | confidence | source_text | page_number | status
 ```
 
 ---
 
-## How It Works — Module by Module
+## How It Works - Module by Module
 
-### Module 1 — PDF Parser (`pipeline/pdf_parser.py`)
+### Module 1 - PDF Parser (`pipeline/pdf_parser.py`)
 
 Extracts the raw text from every page of the input PDF. Tries **PyMuPDF** (faster, better layout preservation) first and automatically falls back to **pdfplumber** if PyMuPDF is not installed. Returns a list of `PageContent` objects, each holding a page number and its text.
 
-### Module 2 — Document Chunker (`pipeline/chunker.py`)
+### Module 2 - Document Chunker (`pipeline/chunker.py`)
 
-Large papers exceed a single LLM context window. The chunker slices the full document text into overlapping windows of configurable size (default: 3,000 characters with 300-character overlap). Each `TextChunk` records which source page numbers it spans, preserving provenance through the pipeline.
+Large papers exceed a single context window. The chunker slices the full document text into overlapping windows of configurable size (default: 3,000 characters with 300-character overlap). Each `TextChunk` records which source page numbers it spans, preserving provenance through the pipeline.
 
-### Module 3 — LLM Extraction Agent (`pipeline/llm_extractor.py`)
+### Module 3 - Extractor (`pipeline/llm_extractor.py` + `pipeline/pydantic_models.py`)
 
-The core of the pipeline. For each chunk it builds a LangChain message chain and calls Google Gemini:
+The core of the pipeline. For each chunk, it makes **8 separate API calls** — one per entity section (sites, species, cultivars, traits, variables, methods, treatments, management events). Each call uses a `PydanticOutputParser` to validate the response against a typed schema:
 
 ```
-SystemMessage(extraction_prompt.txt)     ← full instructions + JSON schema
+PromptTemplate (section-specific instructions + format_instructions)
     +
-HumanMessage("[Pages: N]\n\n<chunk>")    ← annotated chunk text
-    │
-    ▼
+chunk text
+    |
+    v
 ChatGoogleGenerativeAI (gemini-2.5-flash)
-    │
-    ▼
-AIMessage → JSON parse → dict
+    |
+    v
+PydanticOutputParser -> validated Pydantic model -> dict
 ```
 
-**Important design detail — the `{brace}` fix:**
-LangChain's `ChatPromptTemplate` treats every `{word}` in a `("system", text)` tuple as a template variable to be filled at invoke-time. The extraction prompt contains a large JSON schema with dozens of curly braces, which caused the pipeline to crash with:
+This section-by-section approach gives the model a tightly focused task per call, produces validated and type-checked output, and isolates failures — if one section fails, the others still succeed.
 
-> `Input to ChatPromptTemplate is missing variables {'"sites"'}`
+`pipeline/pydantic_models.py` defines the Pydantic models for each entity type and the `SECTION_REGISTRY` that maps section keys to their models.
 
-The fix is to wrap the prompt text in a pre-built `SystemMessage` object and pass that directly to `ChatPromptTemplate.from_messages()`. LangChain does **not** scan pre-built message objects for template variables, so all JSON braces are passed through untouched.
+Per-chunk results are merged and deduplicated into a single extraction dict, which is saved as `outputs/raw_extraction.json` for inspection and replay.
 
-Per-chunk results are merged and deduplicated into a single extraction dict, which is also saved as `outputs/raw_extraction.json` for inspection and replay.
-
-### Module 4 — IR Builder (`pipeline/ir_schema.py`)
+### Module 4 - IR Builder (`pipeline/ir_schema.py`)
 
 Converts the raw extraction dict into a fully typed **Intermediate Representation** using Python dataclasses. Every field is wrapped in an `IRField` that carries:
 
 | Field | Description |
 |---|---|
 | `value` | The extracted value |
-| `confidence` | Model certainty, 0.0 – 1.0 |
+| `confidence` | Certainty score, 0.0 - 1.0 |
 | `source_text` | Exact sentence(s) from the paper |
 | `page_number` | Page where found |
 | `status` | `extracted` / `inferred` / `unresolved` |
 
-The IR is the single source of truth between extraction and export. It decouples the LLM output format from the BETYdb schema.
+The IR is the single source of truth between extraction and export. It decouples the extraction format from the BETYdb schema.
 
-### Module 5 — Validation Layer (`pipeline/validator.py`)
+### Module 5 - Validation Layer (`pipeline/validator.py`)
 
 Validates the IR before export and returns typed `ValidationIssue` objects (ERROR or WARNING):
 
-- **Required fields** — sitename, trait name, mean value, variable units, method name
-- **Coordinate ranges** — latitude −90/+90, longitude −180/+180
-- **Datetime format** — parseable by `python-dateutil`
-- **Numeric values** — mean and stat must be floats
-- **Soil texture** — sand + silt + clay should sum to ~100%
-- **Cross-table consistency** — trait names should appear in the variables table
-- **Low confidence** — any extracted field below the `MIN_CONFIDENCE` threshold
+- **Required fields** - sitename, trait name, mean value, variable units, method name
+- **Coordinate ranges** - latitude -90/+90, longitude -180/+180
+- **Datetime format** - parseable by `python-dateutil`
+- **Numeric values** - mean and stat must be floats
+- **Soil texture** - sand + silt + clay should sum to ~100%
+- **Cross-table consistency** - trait names should appear in the variables table
+- **Low confidence** - any extracted field below the `MIN_CONFIDENCE` threshold
 
 Errors are printed with entity path and page number. Export still runs even with errors so partial results are not lost.
 
-### Module 6 — BETYdb Exporter (`pipeline/exporter.py`)
+### Module 6 - BETYdb Exporter (`pipeline/exporter.py`)
 
 Reads the validated IR and writes nine CSV files matching the BETYdb bulk upload schema. The traits wide table is dynamically pivoted — trait names become column headers. The sites table generates WKT geometry (`POINT(lon lat)`) from extracted coordinates. All files include provenance columns (confidence, source_text, page_number, status) on trait rows.
 
@@ -127,39 +124,37 @@ Reads the validated IR and writes nine CSV files matching the BETYdb bulk upload
 ## Project Structure
 
 ```
-betydb_extractor/
-│
-├── main.py                    ← CLI entry point (argparse, 6-step orchestrator)
-├── config.py                  ← All settings: model, chunking, paths, API key
-├── requirements.txt           ← Python dependencies
-├── README.md                  ← This file
-│
-├── pipeline/
-│   ├── __init__.py
-│   ├── pdf_parser.py          ← Module 1: PDF text extraction
-│   ├── chunker.py             ← Module 2: Overlapping text chunking
-│   ├── llm_extractor.py       ← Module 3: LangChain + Gemini extraction
-│   ├── ir_schema.py           ← Module 4: Intermediate representation dataclasses
-│   ├── validator.py           ← Module 5: Field-level validation
-│   └── exporter.py            ← Module 6: BETYdb CSV generation
-│
-├── prompts/
-│   └── extraction_prompt.txt  ← System prompt: instructions + JSON output schema
-│
-├── examples/
-│   └── sample_paper.pdf       ← Example input: maize nitrogen trial paper
-│
-└── outputs/                   ← Auto-created; all generated files go here
-    ├── raw_extraction.json    ← Cached extraction output (auto-saved, used by --use-cache)
-    ├── traits_long.csv
-    ├── traits_wide.csv
-    ├── sites.csv
-    ├── cultivars.csv
-    ├── species.csv
-    ├── variables.csv
-    ├── methods.csv
-    ├── treatments.csv
-    └── management_events.csv
+BETYdb-Paper-to-Dataset-Extraction-Pipeline/
+|
++-- main.py                    - CLI entry point (argparse, 6-step orchestrator)
++-- config.py                  - All settings: model, chunking, paths, API key
++-- requirements.txt           - Python dependencies
++-- README.md
+|
++-- pipeline/
+|   +-- __init__.py
+|   +-- pdf_parser.py          - Module 1: PDF text extraction
+|   +-- chunker.py             - Module 2: Overlapping text chunking
+|   +-- pydantic_models.py     - Module 3a: Pydantic output schema models
+|   +-- llm_extractor.py       - Module 3b: Per-section extraction
+|   +-- ir_schema.py           - Module 4: Intermediate representation dataclasses
+|   +-- validator.py           - Module 5: Field-level validation
+|   +-- exporter.py            - Module 6: BETYdb CSV generation
+|
++-- examples/
+|   +-- sample_paper.pdf       - Example input: maize nitrogen trial paper
+|
++-- outputs/                   - Auto-created; all generated files go here
+    +-- raw_extraction.json    - Cached extraction output (auto-saved, used by --use-cache)
+    +-- traits_long.csv
+    +-- traits_wide.csv
+    +-- sites.csv
+    +-- cultivars.csv
+    +-- species.csv
+    +-- variables.csv
+    +-- methods.csv
+    +-- treatments.csv
+    +-- management_events.csv
 ```
 
 ---
@@ -195,9 +190,10 @@ pip install -r requirements.txt
 
 | Package | Purpose |
 |---|---|
-| `langchain` | LCEL pipeline orchestration |
-| `langchain-core` | Message types, prompt templates |
+| `langchain` | Pipeline orchestration |
+| `langchain-core` | Prompt templates, output parsers |
 | `langchain-google-genai` | Google Gemini chat model |
+| `pydantic` | Structured output validation |
 | `python-dotenv` | Load API key from `.env` file |
 | `pdfplumber` | PDF text extraction (fallback) |
 | `pymupdf` | PDF text extraction (preferred, optional) |
@@ -205,22 +201,22 @@ pip install -r requirements.txt
 
 ### 4. Set your Google API key
 
-**Option A — `.env` file (recommended):**
+**Option A - `.env` file (recommended):**
 
 Create a file named `.env` in the project root:
 
 ```
-GOOGLE_API_KEY=AIzaSy...your-key-here
+GOOGLE_API_KEY=your-key-here
 ```
 
-**Option B — environment variable:**
+**Option B - environment variable:**
 
 ```bash
 # Windows PowerShell
-$env:GOOGLE_API_KEY = "AIzaSy..."
+$env:GOOGLE_API_KEY = "your-key-here"
 
 # macOS / Linux
-export GOOGLE_API_KEY="AIzaSy..."
+export GOOGLE_API_KEY="your-key-here"
 ```
 
 Get a free API key at [https://aistudio.google.com/app/apikey](https://aistudio.google.com/app/apikey).
@@ -237,7 +233,7 @@ python main.py --pdf examples/sample_paper.pdf
 
 ### Replay from cached extraction (no API call, no key needed)
 
-After the first run, `outputs/raw_extraction.json` is saved. You can re-run all downstream steps (IR build → validate → export) without calling the API:
+After the first run, `outputs/raw_extraction.json` is saved. You can re-run all downstream steps (IR build -> validate -> export) without calling the API:
 
 ```bash
 python main.py --pdf examples/sample_paper.pdf --use-cache
@@ -254,7 +250,7 @@ This is useful for:
 python main.py --help
 
   --pdf PATH          Path to input PDF file.               [required]
-  --output-dir PATH   Write CSVs to a custom directory.
+  --output-dir PATH   Override output directory.
   --chunk-size INT    Characters per chunk     (default: 3000)
   --overlap INT       Overlap between chunks   (default: 300)
   --use-cache         Load cached raw_extraction.json instead of running extraction. (alias: --skip-llm)
@@ -278,13 +274,13 @@ All outputs are written to `outputs/` (or `--output-dir` if specified):
 | `methods.csv` | Methods | Measurement method descriptions |
 | `treatments.csv` | Treatments | Experimental treatment descriptions |
 | `management_events.csv` | Managements/Events | Planting, fertilization, harvest events with ISO dates |
-| `raw_extraction.json` | *(internal)* | Full LLM output with confidence scores — saved for replay and audit |
+| `raw_extraction.json` | (internal) | Full extraction output with confidence scores - saved for replay and audit |
 
 **Provenance columns on `traits_long.csv`:**
 
 | Column | Description |
 |---|---|
-| `confidence` | Model certainty for this trait extraction (0.0–1.0) |
+| `confidence` | Certainty score for this trait extraction (0.0-1.0) |
 | `source_text` | The exact sentence(s) from the paper that justified the value |
 | `page_number` | Page where the value was found |
 | `status` | `extracted` / `inferred` / `unresolved` |
@@ -326,7 +322,7 @@ All settings are in `config.py`:
 
 ## Known Limitations
 
-- **Tables and figures**: The LLM reads extracted text only. Data embedded solely in images or complex tables may not be captured. Future work: add table-detection pre-processing.
-- **Long papers**: Very large PDFs produce many chunks. Each chunk is one API call, so extraction time scales linearly with paper length.
+- **Tables and figures**: The extractor reads text only. Data embedded solely in images or complex tables may not be captured.
+- **API call volume**: Each chunk produces 8 API calls (one per entity section). Extraction time scales with both paper length and number of sections.
 - **Unit normalisation**: Units are extracted as-written (e.g. `Mg ha-1`, `t/ha`). Manual review is recommended before upload to ensure BETYdb unit consistency.
 - **Multi-site papers**: The pipeline extracts all sites mentioned; cross-referencing which trait measurement belongs to which site depends on the clarity of the paper's text.

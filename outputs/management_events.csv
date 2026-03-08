@@ -1,4 +1,4 @@
 event,datetime,description
-planting,2021-05-04,Maize Zea mays L. hybrid DKC52-61 planted at 79000 seeds ha-1
-N fertilizer application,2021-04-30,N fertilizer applied
-harvest,2021-09-28,
+planting,2021-05-04,Maize Zea mays L. hybrid DKC52-61 planted at 79000 seeds ha-1.
+fertilization,2021-04-30,"N fertilizer applied. Treatments included High-N: 202 kg N ha-1 urea, Low-N: 67 kg N ha-1, and Control: 0 N."
+harvest,2021-09-28,Harvest of maize.
