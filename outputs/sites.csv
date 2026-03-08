@@ -1,0 +1,2 @@
+sitename,latitude,longitude,elevation,geometry,notes,sand,silt,clay
+"Ames Research Farm, Iowa State University",42.03,-93.65,291.0,POINT(-93.650000 42.030000),Soil type is Mollisol.,35.0,42.0,23.0

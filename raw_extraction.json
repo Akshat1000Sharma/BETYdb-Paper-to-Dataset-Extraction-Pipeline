@@ -1,0 +1,135 @@
+{
+  "sites": [
+    {
+      "sitename":  {"value": "Ames Research Farm", "confidence": 0.95, "source_text": "Field trials were conducted at the Ames Research Farm, Iowa State University, Ames, Iowa.", "page_number": 2, "status": "extracted"},
+      "latitude":  {"value": 42.0308,  "confidence": 0.90, "source_text": "The site is located at 42.03°N, 93.65°W.", "page_number": 2, "status": "extracted"},
+      "longitude": {"value": -93.6490, "confidence": 0.90, "source_text": "The site is located at 42.03°N, 93.65°W.", "page_number": 2, "status": "extracted"},
+      "elevation": {"value": 291.0,    "confidence": 0.80, "source_text": "Elevation of the site is approximately 291 m above sea level.", "page_number": 2, "status": "extracted"},
+      "notes":     {"value": "Mollisol soil; corn-soybean rotation history", "confidence": 0.85, "source_text": "Soil type is Mollisol with a prior corn-soybean rotation.", "page_number": 2, "status": "extracted"},
+      "sand":      {"value": 35.0, "confidence": 0.75, "source_text": "Soil texture analysis showed 35% sand, 42% silt, and 23% clay.", "page_number": 3, "status": "extracted"},
+      "silt":      {"value": 42.0, "confidence": 0.75, "source_text": "Soil texture analysis showed 35% sand, 42% silt, and 23% clay.", "page_number": 3, "status": "extracted"},
+      "clay":      {"value": 23.0, "confidence": 0.75, "source_text": "Soil texture analysis showed 35% sand, 42% silt, and 23% clay.", "page_number": 3, "status": "extracted"}
+    }
+  ],
+  "species": [
+    {
+      "name": {"value": "Zea mays", "confidence": 0.99, "source_text": "Maize (Zea mays L.) hybrids were planted in May 2021.", "page_number": 2, "status": "extracted"}
+    },
+    {
+      "name": {"value": "Glycine max", "confidence": 0.97, "source_text": "Soybean (Glycine max [L.] Merr.) was used as the reference crop.", "page_number": 2, "status": "extracted"}
+    }
+  ],
+  "cultivars": [
+    {
+      "name":  {"value": "DKC52-61", "confidence": 0.95, "source_text": "The maize hybrid DKC52-61 was planted at a density of 79,000 seeds ha⁻¹.", "page_number": 3, "status": "extracted"},
+      "notes": {"value": "Commercial maize hybrid; Dekalb brand", "confidence": 0.80, "source_text": "DKC52-61 is a commercial hybrid marketed by Dekalb.", "page_number": 3, "status": "inferred"}
+    },
+    {
+      "name":  {"value": "P22T61R", "confidence": 0.92, "source_text": "Soybean variety P22T61R was grown in adjacent plots.", "page_number": 3, "status": "extracted"},
+      "notes": {"value": "Roundup-Ready soybean variety; maturity group 2.2", "confidence": 0.75, "source_text": "P22T61R is a maturity group 2.2 soybean.", "page_number": 3, "status": "extracted"}
+    }
+  ],
+  "traits": [
+    {
+      "datetime":  {"value": "2021-08-15", "confidence": 0.88, "source_text": "Canopy height was measured on August 15, 2021.", "page_number": 5, "status": "extracted"},
+      "crop":      {"value": "Zea mays",   "confidence": 0.99, "source_text": "Maize canopy height averaged 2.85 m at silking.", "page_number": 5, "status": "extracted"},
+      "cultivar":  {"value": "DKC52-61",   "confidence": 0.93, "source_text": "DKC52-61 canopy height measured at R1 stage.", "page_number": 5, "status": "extracted"},
+      "sitename":  {"value": "Ames Research Farm", "confidence": 0.95, "source_text": "Measurements taken at Ames Research Farm.", "page_number": 5, "status": "extracted"},
+      "trait":     {"value": "canopy_height", "confidence": 0.97, "source_text": "Canopy height was measured as the distance from the soil surface to the uppermost leaf tip.", "page_number": 4, "status": "extracted"},
+      "method":    {"value": "tape measure", "confidence": 0.85, "source_text": "Canopy height was measured with a standard metric tape measure.", "page_number": 4, "status": "extracted"},
+      "mean":      {"value": 2.85, "confidence": 0.97, "source_text": "Maize canopy height averaged 2.85 m at silking.", "page_number": 5, "status": "extracted"},
+      "units":     {"value": "m",  "confidence": 0.99, "source_text": "Height values expressed in meters.", "page_number": 4, "status": "extracted"},
+      "n":         {"value": 12,   "confidence": 0.88, "source_text": "Measurements were taken from 12 representative plants per plot.", "page_number": 4, "status": "extracted"},
+      "statname":  {"value": "SE", "confidence": 0.90, "source_text": "Values are means ± SE.", "page_number": 5, "status": "extracted"},
+      "stat":      {"value": 0.07, "confidence": 0.88, "source_text": "SE of canopy height was 0.07 m.", "page_number": 5, "status": "extracted"}
+    },
+    {
+      "datetime":  {"value": "2021-08-20", "confidence": 0.85, "source_text": "Leaf nitrogen content was determined from samples collected on August 20, 2021.", "page_number": 6, "status": "extracted"},
+      "crop":      {"value": "Zea mays",   "confidence": 0.99, "source_text": "Maize leaf nitrogen content was analyzed.", "page_number": 6, "status": "extracted"},
+      "cultivar":  {"value": "DKC52-61",   "confidence": 0.93, "source_text": "Ear leaf samples from DKC52-61 were analyzed for N.", "page_number": 6, "status": "extracted"},
+      "sitename":  {"value": "Ames Research Farm", "confidence": 0.95, "source_text": "Samples collected from Ames Research Farm.", "page_number": 6, "status": "extracted"},
+      "trait":     {"value": "leaf_nitrogen", "confidence": 0.95, "source_text": "Leaf nitrogen concentration was determined by combustion analysis.", "page_number": 6, "status": "extracted"},
+      "method":    {"value": "Dumas combustion", "confidence": 0.90, "source_text": "Total nitrogen was measured using Dumas combustion method.", "page_number": 4, "status": "extracted"},
+      "mean":      {"value": 3.12, "confidence": 0.95, "source_text": "Mean leaf N concentration was 3.12% in the high-N treatment.", "page_number": 6, "status": "extracted"},
+      "units":     {"value": "%",  "confidence": 0.99, "source_text": "Nitrogen concentrations expressed as percentage of dry matter.", "page_number": 4, "status": "extracted"},
+      "n":         {"value": 8,    "confidence": 0.85, "source_text": "Eight plants per plot were sampled for leaf N analysis.", "page_number": 4, "status": "extracted"},
+      "statname":  {"value": "SD", "confidence": 0.88, "source_text": "Mean ± SD is reported.", "page_number": 6, "status": "extracted"},
+      "stat":      {"value": 0.18, "confidence": 0.85, "source_text": "Standard deviation for leaf N was 0.18%.", "page_number": 6, "status": "extracted"}
+    },
+    {
+      "datetime":  {"value": "2021-09-28", "confidence": 0.88, "source_text": "Grain yield was determined at harvest on September 28, 2021.", "page_number": 7, "status": "extracted"},
+      "crop":      {"value": "Zea mays",   "confidence": 0.99, "source_text": "Maize grain yield at 15.5% moisture.", "page_number": 7, "status": "extracted"},
+      "cultivar":  {"value": "DKC52-61",   "confidence": 0.93, "source_text": "Grain yield of DKC52-61 was recorded.", "page_number": 7, "status": "extracted"},
+      "sitename":  {"value": "Ames Research Farm", "confidence": 0.95, "source_text": "Harvest at Ames Research Farm.", "page_number": 7, "status": "extracted"},
+      "trait":     {"value": "grain_yield", "confidence": 0.97, "source_text": "Grain yield was determined from a 2-row harvest section.", "page_number": 4, "status": "extracted"},
+      "method":    {"value": "plot combine harvester", "confidence": 0.88, "source_text": "Grain was harvested with a Massey Ferguson 8XP plot combine.", "page_number": 4, "status": "extracted"},
+      "mean":      {"value": 11.4, "confidence": 0.97, "source_text": "Mean grain yield across nitrogen treatments was 11.4 Mg ha⁻¹.", "page_number": 7, "status": "extracted"},
+      "units":     {"value": "Mg ha-1", "confidence": 0.97, "source_text": "Yield expressed in Mg ha⁻¹ at 15.5% moisture.", "page_number": 4, "status": "extracted"},
+      "n":         {"value": 4,    "confidence": 0.88, "source_text": "Four replicate plots per treatment were harvested.", "page_number": 4, "status": "extracted"},
+      "statname":  {"value": "SE", "confidence": 0.90, "source_text": "Standard error bars are shown.", "page_number": 7, "status": "extracted"},
+      "stat":      {"value": 0.23, "confidence": 0.87, "source_text": "SE of grain yield was 0.23 Mg ha⁻¹.", "page_number": 7, "status": "extracted"}
+    }
+  ],
+  "variables": [
+    {
+      "name":        {"value": "canopy_height",  "confidence": 0.97, "source_text": "Canopy height was measured as the distance from the soil surface to the uppermost leaf tip.", "page_number": 4, "status": "extracted"},
+      "units":       {"value": "m",              "confidence": 0.99, "source_text": "Height values expressed in meters.", "page_number": 4, "status": "extracted"},
+      "description": {"value": "Distance from soil surface to the uppermost leaf tip of the plant.", "confidence": 0.95, "source_text": "Canopy height was measured as the distance from the soil surface to the uppermost leaf tip.", "page_number": 4, "status": "extracted"}
+    },
+    {
+      "name":        {"value": "leaf_nitrogen",  "confidence": 0.95, "source_text": "Leaf nitrogen concentration was determined by combustion analysis.", "page_number": 6, "status": "extracted"},
+      "units":       {"value": "%",              "confidence": 0.99, "source_text": "Nitrogen concentrations expressed as percentage of dry matter.", "page_number": 4, "status": "extracted"},
+      "description": {"value": "Nitrogen concentration in the ear leaf at silking stage, expressed as percentage of dry mass.", "confidence": 0.90, "source_text": "Ear-leaf N content was used as indicator of plant N status at silking.", "page_number": 4, "status": "extracted"}
+    },
+    {
+      "name":        {"value": "grain_yield",    "confidence": 0.97, "source_text": "Grain yield was determined from a 2-row harvest section.", "page_number": 4, "status": "extracted"},
+      "units":       {"value": "Mg ha-1",        "confidence": 0.97, "source_text": "Yield expressed in Mg ha⁻¹ at 15.5% moisture.", "page_number": 4, "status": "extracted"},
+      "description": {"value": "Maize grain yield adjusted to 15.5% moisture content.", "confidence": 0.95, "source_text": "Grain yield at 15.5% moisture.", "page_number": 7, "status": "extracted"}
+    }
+  ],
+  "methods": [
+    {
+      "name":        {"value": "tape measure",         "confidence": 0.85, "source_text": "Canopy height was measured with a standard metric tape measure.", "page_number": 4, "status": "extracted"},
+      "description": {"value": "Standard metric tape measure applied from soil surface to uppermost leaf tip.", "confidence": 0.85, "source_text": "Canopy height was measured with a standard metric tape measure from soil surface to leaf tip.", "page_number": 4, "status": "extracted"}
+    },
+    {
+      "name":        {"value": "Dumas combustion",     "confidence": 0.90, "source_text": "Total nitrogen was measured using Dumas combustion method.", "page_number": 4, "status": "extracted"},
+      "description": {"value": "Dry combustion analysis for total nitrogen determination (LECO CN628).", "confidence": 0.88, "source_text": "Nitrogen was analyzed on a LECO CN628 combustion analyzer.", "page_number": 4, "status": "extracted"}
+    },
+    {
+      "name":        {"value": "plot combine harvester","confidence": 0.88, "source_text": "Grain was harvested with a Massey Ferguson 8XP plot combine.", "page_number": 4, "status": "extracted"},
+      "description": {"value": "Massey Ferguson 8XP plot combine used for grain harvest; yield adjusted to 15.5% moisture.", "confidence": 0.87, "source_text": "Grain harvested with Massey Ferguson 8XP and adjusted to 15.5% moisture.", "page_number": 4, "status": "extracted"}
+    }
+  ],
+  "treatments": [
+    {
+      "name":        {"value": "High N",  "confidence": 0.92, "source_text": "High-N treatment received 202 kg N ha⁻¹ as urea.", "page_number": 3, "status": "extracted"},
+      "description": {"value": "202 kg N ha⁻¹ applied as urea (46-0-0) pre-plant.", "confidence": 0.90, "source_text": "High-N plots received 202 kg N ha⁻¹ as urea (46-0-0) applied pre-plant.", "page_number": 3, "status": "extracted"}
+    },
+    {
+      "name":        {"value": "Low N",   "confidence": 0.92, "source_text": "Low-N treatment received 67 kg N ha⁻¹.", "page_number": 3, "status": "extracted"},
+      "description": {"value": "67 kg N ha⁻¹ applied as urea (46-0-0) pre-plant.", "confidence": 0.90, "source_text": "Low-N plots received 67 kg N ha⁻¹ applied pre-plant.", "page_number": 3, "status": "extracted"}
+    },
+    {
+      "name":        {"value": "Control (0 N)", "confidence": 0.90, "source_text": "Control plots received no N fertilizer.", "page_number": 3, "status": "extracted"},
+      "description": {"value": "No nitrogen fertilizer applied.", "confidence": 0.90, "source_text": "Control plots received no N fertilizer.", "page_number": 3, "status": "extracted"}
+    }
+  ],
+  "management_events": [
+    {
+      "event":       {"value": "planting",       "confidence": 0.95, "source_text": "Maize was planted on May 4, 2021.", "page_number": 3, "status": "extracted"},
+      "datetime":    {"value": "2021-05-04",      "confidence": 0.95, "source_text": "Maize was planted on May 4, 2021.", "page_number": 3, "status": "extracted"},
+      "description": {"value": "Maize hybrid DKC52-61 planted at 79,000 seeds ha⁻¹.", "confidence": 0.92, "source_text": "DKC52-61 was planted at 79,000 seeds ha⁻¹ using a John Deere 7000 planter.", "page_number": 3, "status": "extracted"}
+    },
+    {
+      "event":       {"value": "fertilization",  "confidence": 0.93, "source_text": "Urea was broadcast-applied on April 30, 2021.", "page_number": 3, "status": "extracted"},
+      "datetime":    {"value": "2021-04-30",      "confidence": 0.93, "source_text": "N fertilizer applied on April 30, 2021.", "page_number": 3, "status": "extracted"},
+      "description": {"value": "Pre-plant urea broadcast application at treatment rates.", "confidence": 0.90, "source_text": "Urea was broadcast-applied at treatment rates prior to planting.", "page_number": 3, "status": "extracted"}
+    },
+    {
+      "event":       {"value": "harvest",        "confidence": 0.95, "source_text": "Grain yield was determined at harvest on September 28, 2021.", "page_number": 7, "status": "extracted"},
+      "datetime":    {"value": "2021-09-28",      "confidence": 0.95, "source_text": "Harvest conducted on September 28, 2021.", "page_number": 7, "status": "extracted"},
+      "description": {"value": "Plot combine harvest of maize grain.", "confidence": 0.90, "source_text": "Grain harvested with a Massey Ferguson 8XP plot combine.", "page_number": 7, "status": "extracted"}
+    }
+  ]
+}

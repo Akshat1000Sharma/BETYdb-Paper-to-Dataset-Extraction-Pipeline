@@ -1,0 +1,597 @@
+{
+  "sites": [
+    {
+      "sitename": {
+        "value": "Ames Research Farm, Iowa State University",
+        "confidence": 1.0,
+        "source_text": "Field trials were conducted at the Ames Research Farm, Iowa State University.",
+        "page_number": 1,
+        "status": "extracted"
+      },
+      "latitude": {
+        "value": 42.03,
+        "confidence": 1.0,
+        "source_text": "The site is located at 42.03N, 93.65W.",
+        "page_number": 1,
+        "status": "extracted"
+      },
+      "longitude": {
+        "value": -93.65,
+        "confidence": 1.0,
+        "source_text": "The site is located at 42.03N, 93.65W.",
+        "page_number": 1,
+        "status": "extracted"
+      },
+      "elevation": {
+        "value": 291.0,
+        "confidence": 1.0,
+        "source_text": "Elevation approximately 291 m.",
+        "page_number": 1,
+        "status": "extracted"
+      },
+      "notes": {
+        "value": "Soil type is Mollisol.",
+        "confidence": 1.0,
+        "source_text": "Soil type is Mollisol.",
+        "page_number": 1,
+        "status": "extracted"
+      },
+      "sand": {
+        "value": 35.0,
+        "confidence": 1.0,
+        "source_text": "Soil texture: 35% sand, 42% silt, 23% clay.",
+        "page_number": 1,
+        "status": "extracted"
+      },
+      "silt": {
+        "value": 42.0,
+        "confidence": 1.0,
+        "source_text": "Soil texture: 35% sand, 42% silt, 23% clay.",
+        "page_number": 1,
+        "status": "extracted"
+      },
+      "clay": {
+        "value": 23.0,
+        "confidence": 1.0,
+        "source_text": "Soil texture: 35% sand, 42% silt, 23% clay.",
+        "page_number": 1,
+        "status": "extracted"
+      }
+    }
+  ],
+  "species": [
+    {
+      "name": {
+        "value": "Zea mays",
+        "confidence": 1.0,
+        "source_text": "Maize Zea mays L.",
+        "page_number": 1,
+        "status": "extracted"
+      }
+    },
+    {
+      "name": {
+        "value": "Glycine max",
+        "confidence": 1.0,
+        "source_text": "Soybean Glycine max",
+        "page_number": 1,
+        "status": "extracted"
+      }
+    }
+  ],
+  "cultivars": [
+    {
+      "name": {
+        "value": "DKC52-61",
+        "confidence": 1.0,
+        "source_text": "Maize Zea mays L. hybrid DKC52-61",
+        "page_number": 1,
+        "status": "extracted"
+      },
+      "notes": {
+        "value": "",
+        "confidence": 0.0,
+        "source_text": "",
+        "page_number": null,
+        "status": "unresolved"
+      }
+    },
+    {
+      "name": {
+        "value": "P22T61R",
+        "confidence": 1.0,
+        "source_text": "Soybean Glycine max variety P22T61R",
+        "page_number": 1,
+        "status": "extracted"
+      },
+      "notes": {
+        "value": "",
+        "confidence": 0.0,
+        "source_text": "",
+        "page_number": null,
+        "status": "unresolved"
+      }
+    }
+  ],
+  "traits": [
+    {
+      "datetime": {
+        "value": "2021-08-15",
+        "confidence": 1.0,
+        "source_text": "Canopy height August 15 2021: mean 2.85 m, SE 0.07, n=12.",
+        "page_number": 1,
+        "status": "extracted"
+      },
+      "crop": {
+        "value": "Maize",
+        "confidence": 0.9,
+        "source_text": "Maize Zea mays L. hybrid DKC52-61 planted at 79000 seeds ha-1 on May 4 2021. Canopy height August 15 2021: mean 2.85 m, SE 0.07, n=12.",
+        "page_number": 1,
+        "status": "inferred"
+      },
+      "cultivar": {
+        "value": "DKC52-61",
+        "confidence": 0.9,
+        "source_text": "Maize Zea mays L. hybrid DKC52-61 planted at 79000 seeds ha-1 on May 4 2021. Canopy height August 15 2021: mean 2.85 m, SE 0.07, n=12.",
+        "page_number": 1,
+        "status": "inferred"
+      },
+      "sitename": {
+        "value": "Ames Research Farm, Iowa State University",
+        "confidence": 1.0,
+        "source_text": "Field trials were conducted at the Ames Research Farm, Iowa State University. Canopy height August 15 2021: mean 2.85 m, SE 0.07, n=12.",
+        "page_number": 1,
+        "status": "inferred"
+      },
+      "trait": {
+        "value": "Canopy height",
+        "confidence": 1.0,
+        "source_text": "Canopy height August 15 2021: mean 2.85 m, SE 0.07, n=12.",
+        "page_number": 1,
+        "status": "extracted"
+      },
+      "method": {
+        "value": "tape measure",
+        "confidence": 1.0,
+        "source_text": "Canopy height: tape measure, soil surface to leaf tip.",
+        "page_number": 1,
+        "status": "extracted"
+      },
+      "mean": {
+        "value": 2.85,
+        "confidence": 1.0,
+        "source_text": "Canopy height August 15 2021: mean 2.85 m, SE 0.07, n=12.",
+        "page_number": 1,
+        "status": "extracted"
+      },
+      "units": {
+        "value": "m",
+        "confidence": 1.0,
+        "source_text": "Canopy height August 15 2021: mean 2.85 m, SE 0.07, n=12.",
+        "page_number": 1,
+        "status": "extracted"
+      },
+      "n": {
+        "value": 12,
+        "confidence": 1.0,
+        "source_text": "Canopy height August 15 2021: mean 2.85 m, SE 0.07, n=12.",
+        "page_number": 1,
+        "status": "extracted"
+      },
+      "statname": {
+        "value": "SE",
+        "confidence": 1.0,
+        "source_text": "Canopy height August 15 2021: mean 2.85 m, SE 0.07, n=12.",
+        "page_number": 1,
+        "status": "extracted"
+      },
+      "stat": {
+        "value": 0.07,
+        "confidence": 1.0,
+        "source_text": "Canopy height August 15 2021: mean 2.85 m, SE 0.07, n=12.",
+        "page_number": 1,
+        "status": "extracted"
+      }
+    },
+    {
+      "datetime": {
+        "value": "2021-08-20",
+        "confidence": 1.0,
+        "source_text": "Leaf N August 20 2021: mean 3.12%, SD 0.18, n=8, high-N treatment.",
+        "page_number": 1,
+        "status": "extracted"
+      },
+      "crop": {
+        "value": "Maize",
+        "confidence": 0.9,
+        "source_text": "Maize Zea mays L. hybrid DKC52-61 planted at 79000 seeds ha-1 on May 4 2021. Leaf N August 20 2021: mean 3.12%, SD 0.18, n=8, high-N treatment.",
+        "page_number": 1,
+        "status": "inferred"
+      },
+      "cultivar": {
+        "value": "DKC52-61",
+        "confidence": 0.9,
+        "source_text": "Maize Zea mays L. hybrid DKC52-61 planted at 79000 seeds ha-1 on May 4 2021. Leaf N August 20 2021: mean 3.12%, SD 0.18, n=8, high-N treatment.",
+        "page_number": 1,
+        "status": "inferred"
+      },
+      "sitename": {
+        "value": "Ames Research Farm, Iowa State University",
+        "confidence": 1.0,
+        "source_text": "Field trials were conducted at the Ames Research Farm, Iowa State University. Leaf N August 20 2021: mean 3.12%, SD 0.18, n=8, high-N treatment.",
+        "page_number": 1,
+        "status": "inferred"
+      },
+      "trait": {
+        "value": "Leaf N",
+        "confidence": 1.0,
+        "source_text": "Leaf N August 20 2021: mean 3.12%, SD 0.18, n=8, high-N treatment.",
+        "page_number": 1,
+        "status": "extracted"
+      },
+      "method": {
+        "value": "Dumas combustion",
+        "confidence": 1.0,
+        "source_text": "Leaf N: Dumas combustion, LECO CN628.",
+        "page_number": 1,
+        "status": "extracted"
+      },
+      "mean": {
+        "value": 3.12,
+        "confidence": 1.0,
+        "source_text": "Leaf N August 20 2021: mean 3.12%, SD 0.18, n=8, high-N treatment.",
+        "page_number": 1,
+        "status": "extracted"
+      },
+      "units": {
+        "value": "%",
+        "confidence": 1.0,
+        "source_text": "Leaf N August 20 2021: mean 3.12%, SD 0.18, n=8, high-N treatment.",
+        "page_number": 1,
+        "status": "extracted"
+      },
+      "n": {
+        "value": 8,
+        "confidence": 1.0,
+        "source_text": "Leaf N August 20 2021: mean 3.12%, SD 0.18, n=8, high-N treatment.",
+        "page_number": 1,
+        "status": "extracted"
+      },
+      "statname": {
+        "value": "SD",
+        "confidence": 1.0,
+        "source_text": "Leaf N August 20 2021: mean 3.12%, SD 0.18, n=8, high-N treatment.",
+        "page_number": 1,
+        "status": "extracted"
+      },
+      "stat": {
+        "value": 0.18,
+        "confidence": 1.0,
+        "source_text": "Leaf N August 20 2021: mean 3.12%, SD 0.18, n=8, high-N treatment.",
+        "page_number": 1,
+        "status": "extracted"
+      }
+    },
+    {
+      "datetime": {
+        "value": "2021-09-28",
+        "confidence": 1.0,
+        "source_text": "Grain yield September 28 2021: mean 11.4 Mg ha-1, SE 0.23, n=4.",
+        "page_number": 1,
+        "status": "extracted"
+      },
+      "crop": {
+        "value": "Maize",
+        "confidence": 0.9,
+        "source_text": "Maize Zea mays L. hybrid DKC52-61 planted at 79000 seeds ha-1 on May 4 2021. Grain yield September 28 2021: mean 11.4 Mg ha-1, SE 0.23, n=4.",
+        "page_number": 1,
+        "status": "inferred"
+      },
+      "cultivar": {
+        "value": "DKC52-61",
+        "confidence": 0.9,
+        "source_text": "Maize Zea mays L. hybrid DKC52-61 planted at 79000 seeds ha-1 on May 4 2021. Grain yield September 28 2021: mean 11.4 Mg ha-1, SE 0.23, n=4.",
+        "page_number": 1,
+        "status": "inferred"
+      },
+      "sitename": {
+        "value": "Ames Research Farm, Iowa State University",
+        "confidence": 1.0,
+        "source_text": "Field trials were conducted at the Ames Research Farm, Iowa State University. Grain yield September 28 2021: mean 11.4 Mg ha-1, SE 0.23, n=4.",
+        "page_number": 1,
+        "status": "inferred"
+      },
+      "trait": {
+        "value": "Grain yield",
+        "confidence": 1.0,
+        "source_text": "Grain yield September 28 2021: mean 11.4 Mg ha-1, SE 0.23, n=4.",
+        "page_number": 1,
+        "status": "extracted"
+      },
+      "method": {
+        "value": "Massey Ferguson 8XP combine",
+        "confidence": 1.0,
+        "source_text": "Grain: Massey Ferguson 8XP combine.",
+        "page_number": 1,
+        "status": "extracted"
+      },
+      "mean": {
+        "value": 11.4,
+        "confidence": 1.0,
+        "source_text": "Grain yield September 28 2021: mean 11.4 Mg ha-1, SE 0.23, n=4.",
+        "page_number": 1,
+        "status": "extracted"
+      },
+      "units": {
+        "value": "Mg ha-1",
+        "confidence": 1.0,
+        "source_text": "Grain yield September 28 2021: mean 11.4 Mg ha-1, SE 0.23, n=4.",
+        "page_number": 1,
+        "status": "extracted"
+      },
+      "n": {
+        "value": 4,
+        "confidence": 1.0,
+        "source_text": "Grain yield September 28 2021: mean 11.4 Mg ha-1, SE 0.23, n=4.",
+        "page_number": 1,
+        "status": "extracted"
+      },
+      "statname": {
+        "value": "SE",
+        "confidence": 1.0,
+        "source_text": "Grain yield September 28 2021: mean 11.4 Mg ha-1, SE 0.23, n=4.",
+        "page_number": 1,
+        "status": "extracted"
+      },
+      "stat": {
+        "value": 0.23,
+        "confidence": 1.0,
+        "source_text": "Grain yield September 28 2021: mean 11.4 Mg ha-1, SE 0.23, n=4.",
+        "page_number": 1,
+        "status": "extracted"
+      }
+    }
+  ],
+  "variables": [
+    {
+      "name": {
+        "value": "Canopy height",
+        "confidence": 1.0,
+        "source_text": "Canopy height: tape measure, soil surface to leaf tip.",
+        "page_number": 1,
+        "status": "extracted"
+      },
+      "units": {
+        "value": "m",
+        "confidence": 1.0,
+        "source_text": "Canopy height August 15 2021: mean 2.85 m, SE 0.07, n=12.",
+        "page_number": 1,
+        "status": "extracted"
+      },
+      "description": {
+        "value": "",
+        "confidence": 0.0,
+        "source_text": "",
+        "page_number": null,
+        "status": "unresolved"
+      }
+    },
+    {
+      "name": {
+        "value": "Leaf N",
+        "confidence": 1.0,
+        "source_text": "Leaf N: Dumas combustion, LECO CN628.",
+        "page_number": 1,
+        "status": "extracted"
+      },
+      "units": {
+        "value": "%",
+        "confidence": 1.0,
+        "source_text": "Leaf N August 20 2021: mean 3.12%, SD 0.18, n=8, high-N treatment.",
+        "page_number": 1,
+        "status": "extracted"
+      },
+      "description": {
+        "value": "",
+        "confidence": 0.0,
+        "source_text": "",
+        "page_number": null,
+        "status": "unresolved"
+      }
+    },
+    {
+      "name": {
+        "value": "Grain yield",
+        "confidence": 1.0,
+        "source_text": "Grain yield September 28 2021: mean 11.4 Mg ha-1, SE 0.23, n=4.",
+        "page_number": 1,
+        "status": "extracted"
+      },
+      "units": {
+        "value": "Mg ha-1",
+        "confidence": 1.0,
+        "source_text": "Grain yield September 28 2021: mean 11.4 Mg ha-1, SE 0.23, n=4.",
+        "page_number": 1,
+        "status": "extracted"
+      },
+      "description": {
+        "value": "",
+        "confidence": 0.0,
+        "source_text": "",
+        "page_number": null,
+        "status": "unresolved"
+      }
+    }
+  ],
+  "methods": [
+    {
+      "name": {
+        "value": "tape measure",
+        "confidence": 1.0,
+        "source_text": "Canopy height: tape measure, soil surface to leaf tip.",
+        "page_number": 1,
+        "status": "extracted"
+      },
+      "description": {
+        "value": "soil surface to leaf tip",
+        "confidence": 1.0,
+        "source_text": "Canopy height: tape measure, soil surface to leaf tip.",
+        "page_number": 1,
+        "status": "extracted"
+      }
+    },
+    {
+      "name": {
+        "value": "Dumas combustion",
+        "confidence": 1.0,
+        "source_text": "Leaf N: Dumas combustion, LECO CN628.",
+        "page_number": 1,
+        "status": "extracted"
+      },
+      "description": {
+        "value": "LECO CN628",
+        "confidence": 1.0,
+        "source_text": "Leaf N: Dumas combustion, LECO CN628.",
+        "page_number": 1,
+        "status": "extracted"
+      }
+    },
+    {
+      "name": {
+        "value": "Massey Ferguson 8XP combine",
+        "confidence": 1.0,
+        "source_text": "Grain: Massey Ferguson 8XP combine.",
+        "page_number": 1,
+        "status": "extracted"
+      },
+      "description": {
+        "value": "",
+        "confidence": 0.0,
+        "source_text": "",
+        "page_number": null,
+        "status": "unresolved"
+      }
+    }
+  ],
+  "treatments": [
+    {
+      "name": {
+        "value": "High-N",
+        "confidence": 1.0,
+        "source_text": "High-N: 202 kg N ha-1 urea.",
+        "page_number": 1,
+        "status": "extracted"
+      },
+      "description": {
+        "value": "202 kg N ha-1 urea",
+        "confidence": 1.0,
+        "source_text": "High-N: 202 kg N ha-1 urea.",
+        "page_number": 1,
+        "status": "extracted"
+      }
+    },
+    {
+      "name": {
+        "value": "Low-N",
+        "confidence": 1.0,
+        "source_text": "Low-N: 67 kg N ha-1.",
+        "page_number": 1,
+        "status": "extracted"
+      },
+      "description": {
+        "value": "67 kg N ha-1",
+        "confidence": 1.0,
+        "source_text": "Low-N: 67 kg N ha-1.",
+        "page_number": 1,
+        "status": "extracted"
+      }
+    },
+    {
+      "name": {
+        "value": "Control",
+        "confidence": 1.0,
+        "source_text": "Control: 0 N.",
+        "page_number": 1,
+        "status": "extracted"
+      },
+      "description": {
+        "value": "0 N",
+        "confidence": 1.0,
+        "source_text": "Control: 0 N.",
+        "page_number": 1,
+        "status": "extracted"
+      }
+    }
+  ],
+  "management_events": [
+    {
+      "event": {
+        "value": "planting",
+        "confidence": 1.0,
+        "source_text": "Maize Zea mays L. hybrid DKC52-61 planted at 79000 seeds ha-1 on May 4 2021.",
+        "page_number": 1,
+        "status": "extracted"
+      },
+      "datetime": {
+        "value": "2021-05-04",
+        "confidence": 1.0,
+        "source_text": "Maize Zea mays L. hybrid DKC52-61 planted at 79000 seeds ha-1 on May 4 2021.",
+        "page_number": 1,
+        "status": "extracted"
+      },
+      "description": {
+        "value": "Maize Zea mays L. hybrid DKC52-61 planted at 79000 seeds ha-1",
+        "confidence": 1.0,
+        "source_text": "Maize Zea mays L. hybrid DKC52-61 planted at 79000 seeds ha-1 on May 4 2021.",
+        "page_number": 1,
+        "status": "extracted"
+      }
+    },
+    {
+      "event": {
+        "value": "N fertilizer application",
+        "confidence": 1.0,
+        "source_text": "N fertilizer applied April 30 2021.",
+        "page_number": 1,
+        "status": "extracted"
+      },
+      "datetime": {
+        "value": "2021-04-30",
+        "confidence": 1.0,
+        "source_text": "N fertilizer applied April 30 2021.",
+        "page_number": 1,
+        "status": "extracted"
+      },
+      "description": {
+        "value": "N fertilizer applied",
+        "confidence": 1.0,
+        "source_text": "N fertilizer applied April 30 2021.",
+        "page_number": 1,
+        "status": "extracted"
+      }
+    },
+    {
+      "event": {
+        "value": "harvest",
+        "confidence": 1.0,
+        "source_text": "Harvest September 28 2021.",
+        "page_number": 1,
+        "status": "extracted"
+      },
+      "datetime": {
+        "value": "2021-09-28",
+        "confidence": 1.0,
+        "source_text": "Harvest September 28 2021.",
+        "page_number": 1,
+        "status": "extracted"
+      },
+      "description": {
+        "value": "",
+        "confidence": 0.0,
+        "source_text": "",
+        "page_number": null,
+        "status": "unresolved"
+      }
+    }
+  ]
+}
